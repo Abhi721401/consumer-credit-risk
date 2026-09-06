@@ -15,6 +15,10 @@ a calibrated PD model to a monitoring-aware dashboard and a real scoring
 API — on a public dataset, at a scope appropriate for an entry-level
 risk-analytics role.
 
+# Short Demo Video
+
+![Demo](https://github.com/user-attachments/assets/d489353b-990b-4a22-9034-57ef81a26b14)
+
 ## Dataset
 
 [UCI / Kaggle "Default of Credit Card Clients"](https://www.kaggle.com/datasets/uciml/default-of-credit-card-clients-dataset) —
