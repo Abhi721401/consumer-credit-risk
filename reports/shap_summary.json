@@ -1,0 +1,66 @@
+{
+  "model": "xgboost",
+  "sample_size": 1000,
+  "global_importance": [
+    {
+      "feature": "PAY_0",
+      "mean_abs_shap": 0.2571460008621216
+    },
+    {
+      "feature": "MAX_DELINQUENCY",
+      "mean_abs_shap": 0.2544440031051636
+    },
+    {
+      "feature": "N_MONTHS_DELINQUENT",
+      "mean_abs_shap": 0.18530291318893433
+    },
+    {
+      "feature": "AVG_DELINQUENCY_SEVERITY",
+      "mean_abs_shap": 0.14455416798591614
+    },
+    {
+      "feature": "BILL_AMT1",
+      "mean_abs_shap": 0.10056791454553604
+    },
+    {
+      "feature": "LIMIT_BAL",
+      "mean_abs_shap": 0.08771723508834839
+    },
+    {
+      "feature": "PAY_AMT2",
+      "mean_abs_shap": 0.07807891070842743
+    },
+    {
+      "feature": "BILL_VOLATILITY",
+      "mean_abs_shap": 0.07322593778371811
+    },
+    {
+      "feature": "PAY_AMT3",
+      "mean_abs_shap": 0.07243254035711288
+    },
+    {
+      "feature": "BILL_TREND",
+      "mean_abs_shap": 0.06967427581548691
+    },
+    {
+      "feature": "UTIL_LATEST",
+      "mean_abs_shap": 0.06645116209983826
+    },
+    {
+      "feature": "PAYCOV_LATEST",
+      "mean_abs_shap": 0.05762604996562004
+    },
+    {
+      "feature": "PAYCOV_AVG",
+      "mean_abs_shap": 0.05723884329199791
+    },
+    {
+      "feature": "BILL_AMT5",
+      "mean_abs_shap": 0.0561995767056942
+    },
+    {
+      "feature": "PAY_AMT1",
+      "mean_abs_shap": 0.05396455526351929
+    }
+  ]
+}

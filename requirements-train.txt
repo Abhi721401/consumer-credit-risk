@@ -1,0 +1,19 @@
+# requirements-train.txt — full pipeline dependencies.
+# Install this (in addition to, or instead of, requirements.txt — it
+# includes everything requirements.txt has) to run the full training
+# pipeline: data audit, EDA, feature engineering, statistical tests,
+# the class-imbalance/VAE experiment, model training, SHAP explainability.
+#
+#   pip install -r requirements-train.txt
+#
+# NOTE on torch: a plain `pip install torch` pulls large bundled CUDA
+# packages even on a CPU-only machine. If disk space is tight, install
+# the CPU wheel directly instead:
+#   pip install --no-deps torch
+
+-r requirements.txt
+matplotlib>=3.7
+seaborn>=0.12
+imbalanced-learn>=0.12
+shap>=0.44
+torch>=2.0

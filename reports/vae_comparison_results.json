@@ -1,0 +1,271 @@
+{
+  "n_majority_train": 17523,
+  "n_minority_train": 4977,
+  "n_synthetic_generated": 12546,
+  "vae_training": {
+    "final_recon_loss": 0.0351165872353889,
+    "final_kld_loss": 1.8954057076237445,
+    "epochs": 300
+  },
+  "distributional_diagnostics": {
+    "mean_abs_pct_diff_vs_real": 0.5789744358439708,
+    "std_abs_pct_diff_vs_real": 0.2508395535320703,
+    "mean_standardized_diff_vs_real": 0.05862763649633913,
+    "note": "mean_abs_pct_diff is unstable for near-zero-mean features (several engineered trend/ratio features have real means close to 0, which inflates a relative-percent metric); mean_standardized_diff (mean difference in units of the real feature's own std) is the more reliable summary and is what the verdict below is based on.",
+    "correlation_matrix_frobenius_diff": 3.5263618563037658,
+    "worst_features_by_pct_deviation": [
+      {
+        "feature": "PAYCOV_TREND",
+        "pct_diff": 3.606624344721589
+      },
+      {
+        "feature": "PAYMENT_CAPACITY",
+        "pct_diff": 2.6535437923616967
+      },
+      {
+        "feature": "UTIL_VOLATILITY",
+        "pct_diff": 2.5775720441481913
+      },
+      {
+        "feature": "BILL_AMT6",
+        "pct_diff": 2.327283843028215
+      },
+      {
+        "feature": "BILL_AMT4",
+        "pct_diff": 1.9638824615698658
+      }
+    ],
+    "worst_features_by_standardized_deviation": [
+      {
+        "feature": "UTILIZATION_STRESS_FLAG",
+        "std_diff": 0.1705738033366845
+      },
+      {
+        "feature": "RECENT_DELINQUENCY",
+        "std_diff": 0.1590269419247286
+      },
+      {
+        "feature": "PERSISTENT_DELINQUENCY_FLAG",
+        "std_diff": 0.15140078359703868
+      },
+      {
+        "feature": "PAY_4",
+        "std_diff": 0.13752430753903158
+      },
+      {
+        "feature": "PAYMENT_CAPACITY",
+        "std_diff": 0.12228373381059113
+      },
+      {
+        "feature": "BILL_VOLATILITY",
+        "std_diff": 0.11733926313285073
+      },
+      {
+        "feature": "PAYAMT_MAX",
+        "std_diff": 0.11599734077660927
+      },
+      {
+        "feature": "PAYAMT_VOLATILITY",
+        "std_diff": 0.11553973064037983
+      }
+    ]
+  },
+  "baseline_metrics": {
+    "logistic_regression": {
+      "roc_auc": 0.7558251263464737,
+      "pr_auc": 0.5105811949632055,
+      "ks": 0.3992265809472417,
+      "brier_score": 0.14116589876062371,
+      "precision": 0.6197021764032073,
+      "recall": 0.32610006027727545,
+      "f1": 0.4273301737756714,
+      "confusion_matrix": [
+        [
+          5509,
+          332
+        ],
+        [
+          1118,
+          541
+        ]
+      ],
+      "threshold": 0.5
+    },
+    "random_forest": {
+      "roc_auc": 0.7804360768317001,
+      "pr_auc": 0.5600312499751761,
+      "ks": 0.4218322619953171,
+      "brier_score": 0.13485329489166872,
+      "precision": 0.6513089005235602,
+      "recall": 0.37492465340566605,
+      "f1": 0.47589900535577656,
+      "confusion_matrix": [
+        [
+          5508,
+          333
+        ],
+        [
+          1037,
+          622
+        ]
+      ],
+      "threshold": 0.5
+    },
+    "xgboost": {
+      "roc_auc": 0.78065093265694,
+      "pr_auc": 0.5629922649788585,
+      "ks": 0.436929753599996,
+      "brier_score": 0.13447952270507812,
+      "precision": 0.6566844919786097,
+      "recall": 0.37010247136829416,
+      "f1": 0.47340015420200465,
+      "confusion_matrix": [
+        [
+          5520,
+          321
+        ],
+        [
+          1045,
+          614
+        ]
+      ],
+      "threshold": 0.5
+    }
+  },
+  "vae_balanced_metrics": {
+    "logistic_regression": {
+      "roc_auc": 0.7370974794274515,
+      "pr_auc": 0.45531672645164334,
+      "ks": 0.37915582712836526,
+      "brier_score": 0.18859182180552847,
+      "precision": 0.4464037122969838,
+      "recall": 0.5798673899939722,
+      "f1": 0.5044572627163083,
+      "confusion_matrix": [
+        [
+          4648,
+          1193
+        ],
+        [
+          697,
+          962
+        ]
+      ],
+      "threshold": 0.5
+    },
+    "random_forest": {
+      "roc_auc": 0.7789215599771274,
+      "pr_auc": 0.558591015713852,
+      "ks": 0.42382602498457467,
+      "brier_score": 0.1355372484532325,
+      "precision": 0.6370887337986042,
+      "recall": 0.38517179023508136,
+      "f1": 0.4800901577761082,
+      "confusion_matrix": [
+        [
+          5477,
+          364
+        ],
+        [
+          1020,
+          639
+        ]
+      ],
+      "threshold": 0.5
+    },
+    "xgboost": {
+      "roc_auc": 0.7804539814838034,
+      "pr_auc": 0.5575439418282849,
+      "ks": 0.4380105341272472,
+      "brier_score": 0.13479629158973694,
+      "precision": 0.6529100529100529,
+      "recall": 0.3719107896323086,
+      "f1": 0.4738863287250384,
+      "confusion_matrix": [
+        [
+          5513,
+          328
+        ],
+        [
+          1042,
+          617
+        ]
+      ],
+      "threshold": 0.5
+    }
+  },
+  "full_comparison_table": [
+    {
+      "model": "logistic_regression",
+      "strategy": "none (baseline)",
+      "roc_auc": 0.7558251263464737,
+      "pr_auc": 0.5105811949632055,
+      "recall": 0.32610006027727545,
+      "precision": 0.6197021764032073,
+      "f1": 0.4273301737756714
+    },
+    {
+      "model": "random_forest",
+      "strategy": "none (baseline)",
+      "roc_auc": 0.7804360768317001,
+      "pr_auc": 0.5600312499751761,
+      "recall": 0.37492465340566605,
+      "precision": 0.6513089005235602,
+      "f1": 0.47589900535577656
+    },
+    {
+      "model": "xgboost",
+      "strategy": "none (baseline)",
+      "roc_auc": 0.78065093265694,
+      "pr_auc": 0.5629922649788585,
+      "recall": 0.37010247136829416,
+      "precision": 0.6566844919786097,
+      "f1": 0.47340015420200465
+    },
+    {
+      "model": "logistic_regression",
+      "strategy": "vae_balanced",
+      "roc_auc": 0.7370974794274515,
+      "pr_auc": 0.45531672645164334,
+      "recall": 0.5798673899939722,
+      "precision": 0.4464037122969838,
+      "f1": 0.5044572627163083
+    },
+    {
+      "model": "random_forest",
+      "strategy": "vae_balanced",
+      "roc_auc": 0.7789215599771274,
+      "pr_auc": 0.558591015713852,
+      "recall": 0.38517179023508136,
+      "precision": 0.6370887337986042,
+      "f1": 0.4800901577761082
+    },
+    {
+      "model": "xgboost",
+      "strategy": "vae_balanced",
+      "roc_auc": 0.7804539814838034,
+      "pr_auc": 0.5575439418282849,
+      "recall": 0.3719107896323086,
+      "precision": 0.6529100529100529,
+      "f1": 0.4738863287250384
+    },
+    {
+      "model": "logistic_regression",
+      "strategy": "class_weight",
+      "roc_auc": 0.7574225102652479,
+      "pr_auc": 0.5062561604573745,
+      "recall": 0.6142254370102471,
+      "precision": 0.4341712824882829,
+      "f1": 0.508736894658013
+    },
+    {
+      "model": "logistic_regression",
+      "strategy": "smote",
+      "roc_auc": 0.7578492292073069,
+      "pr_auc": 0.5066943810914735,
+      "recall": 0.6142254370102471,
+      "precision": 0.4367766823831976,
+      "f1": 0.5105210420841684
+    }
+  ]
+}
